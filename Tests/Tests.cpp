@@ -26,9 +26,9 @@ namespace Tests
             Vector3 a(1, 2, 3);
             Vector3 b(-4, 5, -6);
             Vector3 c = a.cross(b);
-            Assert::AreEqual(-3.0f, c.x);
-            Assert::AreEqual(6.0f, c.y);
-            Assert::AreEqual(3.0f, c.z);
+            Assert::AreEqual(-27.0f, c.x);
+            Assert::AreEqual(-6.0f, c.y);
+            Assert::AreEqual(13.0f, c.z);
         }   
 
         TEST_METHOD(ShouldReturnNormalizedVector)
