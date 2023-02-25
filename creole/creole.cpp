@@ -1,12 +1,7 @@
-#include <iostream>
+#include "Creole.h"
 #include "Vector3.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
-
-struct RigidBody {
+struct PhysicsObject {
     Vector3 position;
     Vector3 velocity;
     Vector3 acceleration;
