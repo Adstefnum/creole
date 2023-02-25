@@ -39,5 +39,35 @@ namespace Tests
             Assert::AreEqual(0.8f, result.y, 0.001f);
             Assert::AreEqual(0.0f, result.z, 0.001f);
         }
+
+        TEST_METHOD(TestVectorAddition)
+        {
+            Vector3 v1(1.0f, 2.0f, 3.0f);
+            Vector3 v2(4.0f, 5.0f, 6.0f);
+            Vector3 result = v1 + v2;
+            Assert::AreEqual(5.0f, result.x, 0.001f);
+            Assert::AreEqual(7.0f, result.y, 0.001f);
+            Assert::AreEqual(9.0f, result.z, 0.001f);
+        }
+
+        TEST_METHOD(TestVectorSubtraction)
+        {
+            Vector3 v1(1.0f, 2.0f, 3.0f);
+            Vector3 v2(4.0f, 5.0f, 6.0f);
+            Vector3 result = v1 - v2;
+            Assert::AreEqual(-3.0f, result.x, 0.001f);
+            Assert::AreEqual(-3.0f, result.y, 0.001f);
+            Assert::AreEqual(-3.0f, result.z, 0.001f);
+        }
+
+        TEST_METHOD(TestVectorScalarMultiplication)
+        {
+            Vector3 v(1.0f, 2.0f, 3.0f);
+            float scalar = 2.0f;
+            Vector3 result = v * scalar;
+            Assert::AreEqual(2.0f, result.x, 0.001f);
+            Assert::AreEqual(4.0f, result.y, 0.001f);
+            Assert::AreEqual(6.0f, result.z, 0.001f);
+        }
 	};
 }
