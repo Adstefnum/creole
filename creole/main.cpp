@@ -6,13 +6,22 @@ int main()
 {
     Creole cr = Creole();
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My Physics Engine");
-   /* cr.setWindowSize(600,800);
-    cr.setWindowTitle("Creole");
-    cr.initialize();*/
-    window.clear(sf::Color::Black);
-    // Draw your objects using SFML's rendering functions
-    window.display();
+    sf::Window window(sf::VideoMode(800, 600), "My window");
+
+    // run the program as long as the window is open
+    while (window.isOpen())
+    {
+        // check all the window's events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+    }
+
+    return 0;
 }
 
 
