@@ -32,9 +32,16 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
       
-    - name: Install SFML
+    - name: Set up SFML
       run: |
-        choco install -y sfml
+            echo "##[group]Set up SFML##"
+            curl -o SFML-2.5.1-windows-vc15-64-bit.zip https://www.sfml-dev.org/files/SFML-2.5.1-windows-vc15-64-bit.zip
+            mkdir Dependencies
+            cd Dependencies
+            powershell Expand-Archive ../SFML-2.5.1-windows-vc15-64-bit.zip
+            cd ..
+            set SFML_ROOT=%CD%\Dependencies\SFML-2.5.1
+            echo "##[endgroup]"
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
