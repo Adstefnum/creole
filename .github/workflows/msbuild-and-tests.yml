@@ -14,6 +14,8 @@ env:
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Debug
+  SFML_ROOT: "./Dependencies/SFML-2.5.1"
+  SFML_INCLUDE_DIR: "./Dependencies/SFML-2.5.1/include"
 
 permissions:
   contents: read
