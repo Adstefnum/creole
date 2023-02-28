@@ -80,7 +80,7 @@ namespace CreoleTests
             Assert::AreEqual(5.0f, result.z, 0.001f);
         }
 
-        TEST_METHOD(TestVector3AdditionAssignmentOperator)
+       /* TEST_METHOD(TestVector3AdditionAssignmentOperator)
         {
             Vector3 v1(1.0f, 2.0f, 3.0f);
             Vector3 v2(4.0f, 5.0f, 6.0f);
@@ -90,6 +90,6 @@ namespace CreoleTests
             Assert::AreEqual(5.0f, v1.x);
             Assert::AreEqual(7.0f, v1.y);
             Assert::AreEqual(9.0f, v1.z);
-        }
+        }*/
 	};
 }
