@@ -3,7 +3,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace Tests
+namespace CreoleTests
 {
 	TEST_CLASS(Vector3Tests)
 	{
@@ -68,6 +68,28 @@ namespace Tests
             Assert::AreEqual(2.0f, result.x, 0.001f);
             Assert::AreEqual(4.0f, result.y, 0.001f);
             Assert::AreEqual(6.0f, result.z, 0.001f);
+        }
+
+        TEST_METHOD(TestVectorScalarDivison)
+        {
+            Vector3 v1(6.0f, 8.0f, 10.0f);
+            float scalar = 2.0f;
+            Vector3 result = v1 / scalar;
+            Assert::AreEqual(3.0f, result.x, 0.001f);
+            Assert::AreEqual(4.0f, result.y, 0.001f);
+            Assert::AreEqual(5.0f, result.z, 0.001f);
+        }
+
+        TEST_METHOD(TestVector3AdditionAssignmentOperator)
+        {
+            Vector3 v1(1.0f, 2.0f, 3.0f);
+            Vector3 v2(4.0f, 5.0f, 6.0f);
+
+            v1 += v2;
+
+            Assert::AreEqual(5.0f, v1.x);
+            Assert::AreEqual(7.0f, v1.y);
+            Assert::AreEqual(9.0f, v1.z);
         }
 	};
 }
